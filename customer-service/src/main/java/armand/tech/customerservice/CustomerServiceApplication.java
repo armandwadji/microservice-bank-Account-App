@@ -1,16 +1,19 @@
 package armand.tech.customerservice;
 
+import armand.tech.customerservice.config.GlobalConfig;
 import armand.tech.customerservice.entity.Customer;
 import armand.tech.customerservice.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
+@EnableConfigurationProperties(GlobalConfig.class)
 public class CustomerServiceApplication {
 
 	public static void main(String[] args) {
