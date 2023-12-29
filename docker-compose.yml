@@ -83,5 +83,13 @@ services:
       account-service:
         condition: service_healthy
 
+  #SERVICE FRONT ANGULAR
+  front-end-angular:
+    build: ./angular-front-end
+    container_name: angular-front-service
+    ports:
+      - '80:80'
+    expose:
+      - '80'
 
 
