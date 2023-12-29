@@ -24,5 +24,5 @@ FROM nginx:latest
 COPY --from=build /usr/local/app/dist/angular-front-end/browser /usr/share/nginx/html
 
 #Expose port 80
-EXPOSE 80
+#EXPOSE 80
 
