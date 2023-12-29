@@ -1,0 +1,27 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      @if (customers){
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th>
+          </tr>
+          </thead>
+          <tbody>
+            @for (customer of customers; track customer.id) {
+              <tr>
+                <td>{{customer.id}}</td>
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.email}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      } @else{
+        <h1>Liste vide </h1>
+      }
+    </div>
+  </div>
+</div>

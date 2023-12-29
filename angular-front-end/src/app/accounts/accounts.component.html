@@ -1,0 +1,35 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      @if (accounts?.length > 0){
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer name</th>
+          <th>Balance</th>
+          <th>Type</th>
+          <th>Currency</th>
+          <th>CreatedAt</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (account of accounts; track account.id) {
+      <tr>
+        <td>{{account.accountId}}</td>
+        <td>{{account.customer.firstName}} {{account.customer.lastName}}</td>
+        <td>{{account.balance}}</td>
+        <td>{{account.type}}</td>
+        <td>{{account.currency}}</td>
+        <td>{{account.createdAt}}</td>
+      </tr>
+      }
+      </tbody>
+    </table>
+      } @else{
+      <h1>Liste vide </h1>
+      }
+    </div>
+  </div>
+</div>
+
