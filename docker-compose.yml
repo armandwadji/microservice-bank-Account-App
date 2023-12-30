@@ -2,6 +2,7 @@ services:
   #SERVICE DISCOVERY
   discovery-service:
     build: ./discovery-service
+    image: armandwadji/discovery-service:v1.0.0
     container_name: discovery-service-container
     ports:
       - '8761:8761'
@@ -15,6 +16,7 @@ services:
   #SERVICE CONFIG
   config-service:
     build: ./config-service
+    image: armandwadji/config-service:v1.0.0
     container_name: config-service-container
     ports:
       - "9999:9999"
@@ -33,6 +35,7 @@ services:
   #SERVICE CUSTOMER
   customer-service:
     build: ./customer-service
+    image: armandwadji/customer-service:v1.0.0
     container_name: customer-service-container
     ports:
       - '8081:8081'
@@ -52,6 +55,7 @@ services:
   #SERVICE ACCOUNT
   account-service:
     build: ./account-service
+    image: armandwadji/account-service:v1.0.0
     container_name: account-service-container
     ports:
       - '8082:8082'
@@ -71,6 +75,7 @@ services:
   #SERVICE GATEWAY
   gateway-service:
     build: ./gateway-service
+    image: armandwadji/gateway-service:v1.0.0
     container_name: gateway-service-container
     ports:
       - '8888:8888'
@@ -86,6 +91,7 @@ services:
   #SERVICE FRONT ANGULAR
   front-end-angular:
     build: ./angular-front-end
+    image: armandwadji/angular-front-end:v1.0.0
     container_name: angular-front-service
     ports:
       - '80:80'
