@@ -11,3 +11,18 @@ spring:
               - POST
               - PUT
               - DELETE
+
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          gateway:
+#            provider: my-provider
+#            client-id: "bank-account-gateway-client"
+#            client-secret: "Ldl2FsvGqgzBWSMeWQEbgfrmWXlMJhDB"
+#            authorization-grant-type: "authorization_code"
+#            scope: openid
+#        provider:
+#          my-provider:
+#            issuer-uri: http://localhost:8080/realms/bank-account-realm
+#            jwk-set-uri: http://localhost:8080/realms/bank-account-realm/protocol/openid-connect/certs

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {NgForOf, NgIf} from "@angular/common";
+import {KeycloakAngularModule, KeycloakBearerInterceptor} from "keycloak-angular";
 
 @Component({
   selector: 'app-customers',
@@ -8,7 +9,15 @@ import {NgForOf, NgIf} from "@angular/common";
   imports: [
     HttpClientModule,
     NgForOf,
-    NgIf
+    NgIf,
+    KeycloakAngularModule
+  ],
+  providers:[
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: KeycloakBearerInterceptor,
+      multi: true
+    },
   ],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
